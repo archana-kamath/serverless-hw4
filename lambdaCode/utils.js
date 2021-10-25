@@ -21,7 +21,7 @@ exports.saveToS3 = async (bucket, name, buf) => {
   const key = `${name}.${contentType.ext}`;
   await s3.putObject({
     Bucket: bucket,
-    Key: key,
+    Key: name,
     Body: buf,
     ContentEncoding: 'base64',
     ContentType: contentType.mime,
